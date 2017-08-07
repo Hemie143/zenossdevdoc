@@ -1,5 +1,6 @@
 
-- ZenPack = packaged Python egg
+
+* ZenPack = packaged Python egg
 
 =====================
 Folder hierarchy Root
@@ -55,24 +56,24 @@ Folder hierarchy Base (under ZenPacks.<organization>.<function>)
 Export
 ======
 
-- Export ZenPack to a different system
-- Create object/object.xml
-- During Export, all objects under "ZenPack Provides" are written to objects.xml
+* Export ZenPack to a different system
+* Create object/object.xml
+* During Export, all objects under "ZenPack Provides" are written to objects.xml
 
 Install
 =======
 
--	zenpack --install <ZenPackName>
--	zenoss restart
--	zenhub restart & zopectl restart
+* zenpack --install <ZenPackName>
+* zenoss restart
+* zenhub restart & zopectl restart
 
 setuptools
 ==========
 
-- Zenoss provides zenpacksupport, subclass of setuptools
-- zenpacksupport defines additional metadata in eggs
+* Zenoss provides zenpacksupport, subclass of setuptools
+* zenpacksupport defines additional metadata in eggs
 
-  - compatZenossVers: required Zenoss version
-  - preZenPackName: non-egg ZenPack that is to be replaced
+  * compatZenossVers: required Zenoss version
+  * preZenPackName: non-egg ZenPack that is to be replaced
   
 

@@ -9,6 +9,8 @@ Welcome to Zenoss Dev Doc's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+   
+   zenpacks
 
 
 

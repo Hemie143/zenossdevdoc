@@ -71,6 +71,7 @@ setuptools
 
 - Zenoss provides zenpacksupport, subclass of setuptools
 - zenpacksupport defines additional metadata in eggs
+
   - compatZenossVers: required Zenoss version
   - preZenPackName: non-egg ZenPack that is to be replaced
   

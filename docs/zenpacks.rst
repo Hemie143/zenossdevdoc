@@ -1,4 +1,5 @@
-• ZenPack = packaged Python egg
+
+- ZenPack = packaged Python egg
 
 =====================
 Folder hierarchy Root
@@ -9,12 +10,68 @@ Folder hierarchy Root
 +=====================================+===========================================================================+
 | /                                   | Object class definitions                                                  |
 +-------------------------------------+---------------------------------------------------------------------------+
-| /build                              | Created when ZenPack is exported to an egg file. Can be deleted.          |
+| /build                              | Created when ZenPack is exported to an egg file.                          |
+|                                     | Can be deleted.                                                           |
 +-------------------------------------+---------------------------------------------------------------------------+
-| /dist                               | Created when ZenPack is exported to an egg file. Can be deleted.          |
+| /dist                               | Created when ZenPack is exported to an egg file.                          |
+|                                     | Can be deleted.                                                           |
 +-------------------------------------+---------------------------------------------------------------------------+
 | /ZenPacks.<organization>.<function> |	Base folder of ZenPack                                                    |
 +-------------------------------------+---------------------------------------------------------------------------+
-| setup.py                            | Contains parameters for use by setuptools and distutils in creating eggs. |
+| setup.py                            | Contains parameters for use by setuptools and                             |
+|                                     | distutils in creating eggs.                                               |
 +-------------------------------------+---------------------------------------------------------------------------+
+
+================================================================
+Folder hierarchy Base (under ZenPacks.<organization>.<function>)
+================================================================
+
++-------------------------------------+---------------------------------------------------------------------------+
+| Path                                | Contains                                                                  |
++=====================================+===========================================================================+
+| __init__.py                         | Code executed when ZenPack is loaded                                      |
++-------------------------------------+---------------------------------------------------------------------------+
+| /daemons                            | Daemons                                                                   |
++-------------------------------------+---------------------------------------------------------------------------+
+| /datasources                        | Datasources                                                               |
++-------------------------------------+---------------------------------------------------------------------------+
+| /lib                                | 3rd party modules, ZenPack depends on                                     |
++-------------------------------------+---------------------------------------------------------------------------+
+| /libexec                            | plugins (Nagios- or Cacti styles)                                         |
++-------------------------------------+---------------------------------------------------------------------------+
+| /migrate                            | Migrating code between versions                                           |
++-------------------------------------+---------------------------------------------------------------------------+
+| /modeler/plugins                    | Modeler plugins for object classes                                        |
++-------------------------------------+---------------------------------------------------------------------------+
+| /objects                            | Database objects (device classes, templates, …) added via GUI             |
++-------------------------------------+---------------------------------------------------------------------------+
+| /parsers                            | Command parsers                                                           |
++-------------------------------------+---------------------------------------------------------------------------+
+| /reports                            | Report plugins                                                            |
++-------------------------------------+---------------------------------------------------------------------------+
+| /skins/<ZenPackName>                | Skin files, web page templates                                            |
++-------------------------------------+---------------------------------------------------------------------------+
+
+Export
+======
+
+- Export ZenPack to a different system
+- Create object/object.xml
+- During Export, all objects under "ZenPack Provides" are written to objects.xml
+
+Install
+=======
+
+-	zenpack --install <ZenPackName>
+-	zenoss restart
+-	zenhub restart & zopectl restart
+
+setuptools
+==========
+
+- Zenoss provides zenpacksupport, subclass of setuptools
+- zenpacksupport defines additional metadata in eggs
+  - compatZenossVers: required Zenoss version
+  - preZenPackName: non-egg ZenPack that is to be replaced
+  
 

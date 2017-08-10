@@ -27,6 +27,7 @@ Creating the ZenPack
     * Define version, dependencies and author
     * ``cp -r $ ZENHOME/ZenPacks/<ZenPackName> /z/``
     * ``zenpack --link --install /z/<ZenPackName>``
+
       This places a single link file under $ZENHOME/ZenPacks
     * ``zenoss restart``
 * Create with ZenPackLib
@@ -49,6 +50,7 @@ leaveObjects=True, followed by the install method.
 Removing the ZenPack
 ====================
 ``zenpack --remove ZenPack.community.dummy``
+
 ``zenoss restart``
 
 .. _create_zenpacks_el_gui
@@ -112,8 +114,8 @@ Convert egg to Development Mode
 1.	Install egg as usual.
 2.	Restart Zenoss.
 3.	Copy the ZenPack development files into egg's folder
-    cp $ZENHOME/Products/ZenModel/ZenPackTemplate/* $ZENHOME/ZenPacks/ZenPacks.community.YourZenPack-1.0.2-py2.4.egg/
-4.	Edit ZenPack.
+    ``cp $ZENHOME/Products/ZenModel/ZenPackTemplate/* $ZENHOME/ZenPacks/ZenPacks.community.dummy-1.0.2-py2.4.egg/``
+4.	Edit ZenPack
 5.	Export ZenPack
 
 .. _create_zenpacks_template

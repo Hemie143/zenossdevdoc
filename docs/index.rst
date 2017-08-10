@@ -12,7 +12,7 @@ Welcome to Zenoss Dev Doc's documentation!
    
    zenpacks
    simple_zenpacks
-
+   complex_zenpacks
 
 
 Indices and tables

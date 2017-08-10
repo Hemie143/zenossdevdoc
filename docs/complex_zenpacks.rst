@@ -10,48 +10,6 @@ Purposes
 * Create new daemons
 
 
-Configuration data and performance data
-***************************************
-
-* Configuration data:
-
-    * polled every 12 hours,
-    * stored in ZODB,
-    * polled by zenmodeler, using modeler plugins (collector plugins)
-
-* Performance data:
-
-    * polled every 5 minutes,
-    * stored in RRD files
-    * specifications in templates
-
-* Modelers
-
-    * $ZENHOME/Products/DataCollector/plugins/Zenoss
-    * subfolders for cmd, nmap, portscan, python, snmp
-    * enabled with "Modeler Plugins" under Device/Device Class page
-
-* Templates
-
-    * SNMP data collected by zenperfsnmp daemon
-    * SSH data collected by zencommand daemon
-
-
-ZODB
-****
-
-* Zope Object Database
-* Zenoss, based on Zope Web Application Server
-* Store Python objects and their states (object-oriented database)
-* information pushed by modeler plugins
-* ZEO, layer between Zope and ZODB, allows multiple Zope Servers
-* ZMI (Zope Management Interface) http://<zenoss server>:8080/zport/dmd/manage
-* Top level = zport/dmd
-
-    * dmd = Device Management Database
-
-* http://docs.zope.org/zope2/zope2book/index.html
-
 Coding
 ******
 
@@ -67,14 +25,25 @@ Coding
     * Device, OSComponent, IpInterface
     * $ZENHOME/Products/ZenModel
 
-* lationships
-* Requirement to display data about contained components
+* Relationships
+* GUI
 
     * Skin files ($ZENHOME/Products/ZenModel/skins/zenmodel)
     * Mix of HTML, CSS, TAL, AJAX, …
 
+* Daemons
+
 Relationships
 *************
+
+Most devices have a relationship that associates them with their interface component objects and each interface component object has a relationship back to its parent device.
+
+* Typical objects:
+    * Device
+        * Object Class: *Device*
+    * Component
+        * Object Class: *OSComponent*, which inherits from *DeviceComponent* and *ManagedEntity*
+
 
 * ToOne (eg, Device to DeviceClass)
 * ToMany (eg, Device to DeviceGroup)

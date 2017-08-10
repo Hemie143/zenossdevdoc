@@ -1,24 +1,37 @@
-Complex ZenPacks
-================
+.. _complex_zenpacks
 
+****************
+Complex ZenPacks
+****************
+
+.. _complex_zenpacks_purposes
+
+========
 Purposes
-********
+========
 
 * Support a new device type
 * Poll new variables
 * Display web pages with information
 * Create new daemons
 
+.. _complex_zenpacks_coding
 
+======
 Coding
-******
+======
 
 * Logged as Zenoss user (su - zenoss)
 * New device:
 
     * new Python object class
     * /z/ZenPacks.zenoss.dummy/ZenPacks/zenoss/dummy/MyDevice.py
-    * Device class linked to Python class with zPythonClass (zProperty): ZenPacks.zenoss.dummy.MyDevice (dotted path)
+    * Device class linked to Python class with *zPythonClass* (zProperty): ZenPacks.zenoss.dummy.MyDevice (dotted path)
+    * Devices classes hold the monitoring configuration:
+
+        * Monitoring templates bindings
+        * Modeler plugins
+        * Properties (zProperties and cProperties)
 
 * Standard objects classes
 
@@ -26,15 +39,28 @@ Coding
     * $ZENHOME/Products/ZenModel
 
 * Relationships
+* Modelers
+
+    * $ZENHOME/Products/DataCollector/plugins/Zenoss
+    * subfolders for cmd, nmap, portscan, python, snmp
+    * enabled with "Modeler Plugins" under Device/Device Class page
+
+* Templates
 * GUI
 
     * Skin files ($ZENHOME/Products/ZenModel/skins/zenmodel)
     * Mix of HTML, CSS, TAL, AJAX, …
 
 * Daemons
+* ZenPacklib (ZPL) can shorten the development time. This is a tool designed to simplify the coding of ZenPacks.
+However, it doesn't help with coding a modeler plugin or a custom datasource.
 
+
+.. _complex_zenpacks_relationships
+
+=============
 Relationships
-*************
+=============
 
 Most devices have a relationship that associates them with their interface component objects and each interface component object has a relationship back to its parent device.
 
@@ -60,8 +86,11 @@ Most devices have a relationship that associates them with their interface compo
 
 * Container Relationship
 
+.. _complex_zenpacks_gui
+
+===
 GUI
-***
+===
 
 * Zenoss 3: JavaScript to present device details:
 * $ZENHOME/Products/ZenUI3
@@ -74,25 +103,6 @@ GUI
 
 * pt file contains obsolete references for Zenoss 2 (Edit, Events, ..)
 
-Database, Daemons and Directories
-*********************************
-
-.. image:: /_pictures/db_daemons.png
-
-* Performance data
-
-    * Templates define datasources and data* points to collect
-    * $ZENHOME/perf/Devices/<Device>/<datasource>_<datapoint>.rrd
-    * Component data: subfolder under device folder (<Device>/os/interfaces/eth1)
-
-* Configuration data
-
-    * collected by zenmodeler
-    * modeler plugins
-
-* Event data
-
-    * 6 tables: status (active events), history, log, detail, heartbeat & alert_status
 
 
 

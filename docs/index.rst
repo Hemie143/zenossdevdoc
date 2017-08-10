@@ -11,6 +11,7 @@ Welcome to Zenoss Dev Doc's documentation!
    :caption: Contents:
    
    zenpacks
+   simple_zenpacks
 
 
 

@@ -1,4 +1,5 @@
-
+ZenPacks Basics
+===============
 
 * ZenPack = packaged Python egg
 
@@ -75,7 +76,7 @@ Install
 
 * zenpack --install <ZenPackName>
 * zenoss restart
-* zenhub restart & zopectl restart
+* zenhub restart & zopectl restart (zenwebserver restart)
 
 setuptools
 ==========

@@ -45,9 +45,9 @@ Most devices have a relationship that associates them with their interface compo
         * Object Class: *OSComponent*, which inherits from *DeviceComponent* and *ManagedEntity*
 
 
-* ToOne (eg, Device to DeviceClass)
-* ToMany (eg, Device to DeviceGroup)
-* ToManyCont (eg, Device to UserCommand)
+* *ToOne* (eg, Device to DeviceClass)
+* *ToMany* (eg, Device to DeviceGroup)
+* *ToManyCont* (eg, Device to UserCommand)
 
     * ("deviceClass", ToOne(ToManyCont, "Products.ZenModel.DeviceClass", "devices"))
     * relationship name: deviceClass
@@ -76,6 +76,8 @@ GUI
 
 Database, Daemons and Directories
 *********************************
+
+.. image:: /_pictures/db_daemons.png
 
 * Performance data
 

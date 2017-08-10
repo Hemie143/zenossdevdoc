@@ -11,11 +11,9 @@ Preparation
 ===========
 
 * Define names
-
     * ZenPack name: ZenPacks.<organization>.<function>
     * ObjectClass names
     * Relationship names
-
         * distinct from ObjectClass names
 
 .. _create_zenpacks_create
@@ -24,12 +22,34 @@ Preparation
 Creating the ZenPack
 ====================
 
-* Create from GUI*
+* Zenoss4 : Create from GUI*
     * ADVANCED -> Settings -> ZenPacks, Action->Create a ZenPack
     * Define version, dependencies and author
-    * cp -r $ ZENHOME/ZenPacks/<ZenPackName> /z/
-    * zenpack --link --install /z/<ZenPackName>
-    This places a single link file under $ZENHOME/ZenPacks
+    * ``cp -r $ ZENHOME/ZenPacks/<ZenPackName> /z/``
+    * ``zenpack --link --install /z/<ZenPackName>``
+      This places a single link file under $ZENHOME/ZenPacks
+    * ``zenoss restart``
+* Create with ZenPackLib
+    * ``cd /z/``
+    * ``zenpacklib --create ZenPacks.community.dummy``
+    * ``zenpack --link --install /z/ZenPacks.community.dummy``
+    * ``zenoss restart``
+
+.. _create_zenpacks_install
+
+======================
+Installing the ZenPack
+======================
+See section above for the steps.
+When installing, if the ZenPack is already present, the ZenZenPack's remove method is executed with
+leaveObjects=True, followed by the install method.
+
+
+====================
+Removing the ZenPack
+====================
+``zenpack --remove ZenPack.community.dummy``
+``zenoss restart``
 
 .. _create_zenpacks_el_gui
 
@@ -74,8 +94,8 @@ Egg file
 * Created from subfolder build/lib into dist folder and finally copied to $ZENHOME/export
 * Generation together with objects.xml
 * Create egg without updating objects.xml
-cd <ZenPackFolder>
-python setup.py bdist_egg
+  cd <ZenPackFolder>
+  python setup.py bdist_egg
 
 .. _create_zenpacks_migrate
 
@@ -92,7 +112,7 @@ Convert egg to Development Mode
 1.	Install egg as usual.
 2.	Restart Zenoss.
 3.	Copy the ZenPack development files into egg's folder
-cp $ZENHOME/Products/ZenModel/ZenPackTemplate/* $ZENHOME/ZenPacks/ZenPacks.community.YourZenPack-1.0.2-py2.4.egg/
+    cp $ZENHOME/Products/ZenModel/ZenPackTemplate/* $ZENHOME/ZenPacks/ZenPacks.community.YourZenPack-1.0.2-py2.4.egg/
 4.	Edit ZenPack.
 5.	Export ZenPack
 

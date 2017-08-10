@@ -106,9 +106,17 @@ It is recommended to remove the unwanted sample files, created together with the
 Export
 ======
 
-* Export ZenPack to a different system
+* Export ZenPack to a different system, generate an egg file
 * Create object/object.xml
-* During Export, all objects under "ZenPack Provides" are written to objects.xml
+* During Export, all objects under "ZenPack Provides" are written to *objects/objects.xml*
+  This implies that if changes are made within those items, the ZenPack must be exported in order to include those changes in the egg file.
+* The egg file is found in $ZENHOME/exports
+* Export:
+    * ADVANCED -> Settings -> ZenPacks -> Action (Bottom-left) -> Export ZenPack
+* A command-line can also create the egg file, however it doesn't generate the objects.xml file:
+    cd /z/ZenPacks.community.dummy
+    python setup.py bdist_egg
+  The egg file is then found in $ZENHOME/dist
 
 .. _zenpacks_install
 
@@ -117,8 +125,8 @@ Install
 =======
 
 * zenpack --install <ZenPackName>
-* zenoss restart
-* zenhub restart & zopectl restart (zenwebserver restart)
+* Safe (if elements have been added): zenoss restart
+* Quick (if elements have been changed): zenhub restart & zopectl restart (zenwebserver restart)
 
 .. _zenpacks_setuptools
 
@@ -141,27 +149,21 @@ Configuration, performance and event data
 .. image:: /_pictures/db_daemons.png
 
 * Configuration data:
-
     * polled every 12 hours,
     * stored in ZODB,
     * definitions in modeler plugins
     * polled by zenmodeler, using modeler plugins (collector plugins)
-
 * Performance data:
-
     * polled every 5 minutes,
     * stored in RRD files
-      $ZENHOME/perf/Devices/<Device>/<Component>/<datasource>_<datapoint>.rrd
+      ``$ZENHOME/perf/Devices/<Device>/<Component>/<datasource>_<datapoint>.rrd``
     * specifications in templates (contains datasources and datapoints definitions)
     * performed by daemons:
-
         * *zenperfsnmp* for SNMP data
         * *zencommand* for SSH data
         * *zenpython*
         * *zenprocess* for discovered processes
-
 * Event data
-
     * 6 tables: status (active events), history, log, detail, heartbeat & alert_status
 
 

@@ -10,10 +10,9 @@ Simple ZenPacks
 Creation
 ========
 
-* Created from GUI, under ADVANCED -> Settings -> ZenPacks -> Create a ZenPack
+* Created from GUI, under ADVANCED -> Settings -> ZenPacks -> Create a ZenPack. The ZenPack is automatically in development mode.
 * Using the Zenoss Gui: "Add to ZenPack"
-* Items:
-
+* Objects:
     * Device Classes
     * Event Classes
     * Event Mappings
@@ -25,5 +24,12 @@ Creation
     * Device Organizers
     * Performance Templates
     * Reports
+* The objects can be removed from the ZenPack after selecting their checkboxes under *ZenPack Provides* and clicking on *Delete from ZenPack*.
 
-* During Export, all objects under "ZenPack Provides" are written to objects.xml
+.. note::
+
+    When a ZenPack is removed, it will also remove any object it contains, including MIBs, Event Transforms, ...
+
+* During Export, all objects under "ZenPack Provides" are written to objects.xml. The egg file is found in $ZENHOME/export
+
+

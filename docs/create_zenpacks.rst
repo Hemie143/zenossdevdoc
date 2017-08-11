@@ -42,8 +42,8 @@ Creating the ZenPack
 Installing the ZenPack
 ======================
 See section above for the steps.
-When installing, if the ZenPack is already present, the ZenZenPack's remove method is executed with
-leaveObjects=True, followed by the install method.
+When installing, if the ZenPack is already present, the ZenPack's **remove** method is executed with
+leaveObjects=True, followed by the **install** method.
 
 
 ====================

@@ -12,6 +12,8 @@ Most objects definitions can be found under *$ZENHOME/Products/ZenModel*.
 Device
 ======
 
+See *$ZENHOME/Products/ZenModel/Device.py*.
+
 .. code-block:: python
 
     class Device(ManagedEntity, Commandable, Lockable, MaintenanceWindowable,
@@ -126,6 +128,7 @@ Device
 Object attributes
 -----------------
 Inherited from Managed Entity:
+
 * snmpindex
 * monitor
 * productionState

@@ -17,6 +17,7 @@ Welcome to Zenoss Dev Doc's documentation!
    complex_zenpacks
    zenoss_objects
    create_zenpacks
+   pycharm
 
 
 ******************

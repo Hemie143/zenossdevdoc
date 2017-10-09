@@ -15,20 +15,7 @@ SSH Deployment
 3.  Under the Mappings tab, enter the local path and deployment (remote) patch.
 4.  Click on OK to leave the Configuration box.
 5.	Synchronize with Tools -> Deployment -> Sync with Deployed to…
-
-.. _pycharm_github
-
-==================
-Github Integration
-==================
-
-1.	Select VCS -> Enable Version Control Integration
-2.	Select Git and click on OK
-3.	Select root folder and select VCS -> Git -> Add
-4.	Select VCS -> Git -> Commit Directory
-5.	Enter a commit message and click on Commit.
-6.	Select VCS -> Import into Version Control -> Share Project on GitHub
-7.	Click on Continue
+6.  Select Tools -> Deployment -> Automatic Upload
 
 .. _pycharm_libs
 
@@ -48,4 +35,25 @@ Libraries
     b.	c:\repos\zenoss.python
     c.	c:\repos\ZenPacks.zenoss.PythonCollector
 
+.. _pycharm_git
 
+=========
+Git setup
+=========
+
+1.	Select VCS -> Enable Version Control Integration
+2.	Select Git and click on OK
+3.  Create a .gitignore file
+4.	Select root folder and select VCS -> Git -> Add
+5.	Select VCS -> Git -> Commit Directory
+6.	Enter a commit message and click on Commit.
+7.	Select VCS -> Import into Version Control -> Share Project on GitHub
+8.	Click on Continue
+
+
+==================
+GitHub integration
+==================
+
+1. Click on VCS -> Import into Version Control -> Share Project on GitHub.
+2. Confirm the repository name and click on Share.

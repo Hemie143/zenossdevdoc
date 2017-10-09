@@ -45,6 +45,7 @@ See section above for the steps.
 When installing, if the ZenPack is already present, the ZenPack's **remove** method is executed with
 leaveObjects=True, followed by the **install** method.
 
+.. _create_zenpacks_remove
 
 ====================
 Removing the ZenPack

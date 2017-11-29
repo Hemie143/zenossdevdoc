@@ -19,6 +19,7 @@ Welcome to Zenoss Dev Doc's documentation!
    create_zenpacks
 
    datasource_python
+   datasource_py_samples
 
    templates
 

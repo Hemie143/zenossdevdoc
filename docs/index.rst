@@ -18,6 +18,9 @@ Welcome to Zenoss Dev Doc's documentation!
    zenoss_objects
    create_zenpacks
 
+   datasource_python
+
+   templates
 
    zpl_yaml
 

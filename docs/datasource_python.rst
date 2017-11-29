@@ -4,6 +4,10 @@
 Datasource with PythonCollector
 *******************************
 
+A PythonDataSourcePlugin must be in a file called **dsplugins.py** in the base directory of the
+ZenPack. If a ZenPack contains several such plugins, then a **dsplugins** subdirectory can be
+created.
+
 proxy Attributes
 ================
 
@@ -109,7 +113,7 @@ collect(self, config)
     * datasources: list - ZenPacks.zenoss.PythonCollector.services.PythonConfig.PythonDataSourceConfig
 
         * cycletime: integer - Cycle time
-        * component:
+        * component: (to define)
         * datasource: string - Datasource name
         * template: string - Template name
         * manageIp: string - Device IP address
@@ -118,7 +122,22 @@ collect(self, config)
         * eventClass: string - Event Class
         * eventKey: string - Event Key
         * plugin_classname: string - Plugin classname, full path dot-separated
-        * points: list -
+        * points: list of tuples DataPointConfig
+
+            * ???
+            * string - datapoint name
+
+            *   dpName: string
+            *   rrdMax
+            *   rrdCreateCommand
+            *   rrdMin
+            *   component
+            *   rrdPath
+            *   rrdType
+            *   data: dict
+            *   id: string
+
+
         * params: dictionary - output of params method
         * Imported properties (from proxy_attributes)
 

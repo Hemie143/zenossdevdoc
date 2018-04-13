@@ -34,7 +34,31 @@ config_key(cls, datasource, context) method
 *   arguments
 
     *   datasource
+
+        * __primary_parent__: <ToManyContRelationship>
+        * _objects: dictionary of pack, rrdTemplate and datapoint relationships
+        * _v_pluginClass: datasource Python class (full path)
+        * createdTime: DateTime
+        * datapoints: <ToManyContRelationship>
+        * enabled: True or False
+        * id: ID of datasource
+        * pack: <ToOneRelationship>
+        * plugin_classname: Python class name (full path)
+        * rrdTemplate: <ToOneRelationship>
+        * sourcetype: Python
+
     *   context: device or component
+
+        * __primary_parent__: <ToManyContRelationship>
+        * _guid: GUID
+        * _objects: dictionary of relationships, as seen in /dmd/manage
+        * createdTime: DateTime
+        * dependencies: <ToManyRelationship>
+        * dependents: <ToManyRelationship>
+        * id: device or component ID
+        * maintenanceWindows: <ToManyContRelationship>
+        * title: device or component title
+        * ... list of properties and relationship
 
 *   returns tuple with unique config id (all similar components share the same config id) to split
     batches within collector

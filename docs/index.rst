@@ -27,6 +27,8 @@ Welcome to Zenoss Dev Doc's documentation!
 
    pycharm
 
+   events
+
 
 ******************
 Indices and tables
